@@ -17,10 +17,9 @@ export function StatusBoard() {
 	const plugin = usePlugin();
 
 	let setFile = this.app.workspace.activeLeaf.view.file;
-	//console.log(setFile);
 	let setCurrentPage = setFile ? setFile.path : "";
 	let setFileContent = this.app.vault.read(setFile);
-	const setFileCache = this.app.metadataCache.getFileCache(setFile);
+	let setFileCache = this.app.metadataCache.getFileCache(setFile);
 	let setFileFrontMatter = setFileCache.frontmatter;
 
 	let setWordTarget = setFileFrontMatter.wordTarget;
@@ -46,11 +45,13 @@ export function StatusBoard() {
 	setText = setText.replace(/\[ \]{2,}/gi, " ");
 	setText = setText.replace(/\\n /, "\\n");
 
-	setText = removeMarkdown(setText, true);
+	setText = removeMarkdown(setText, setExcludeComments);
 	if (!setIncludeFootnotes) setText = removeFootnotes(setText);
 
 	let setWordCount = getWordCount(setText) - setWordsToRemove;
-	let setCharCount = getCharacterCount(setText, true) - setCharsToRemove;
+	let setCharCount =
+		getCharacterCount(setText, setCharactersIncludeSpaces) -
+		setCharsToRemove;
 	let setSentenceCount = getSentenceCount(setText) - setSentencesToRemove;
 
 	let setWordCountPercentage = setWordTarget
@@ -218,7 +219,9 @@ export function StatusBoard() {
 					) : (
 						""
 					)}
-					<div className="progress-content-item center-text"></div>
+					<div className="progress-content-item center-text">
+						{getStat(overallPercentage)}
+					</div>
 				</div>
 				<span className="progress-item-title">GOALS</span>
 				<div className="progress-content-div">

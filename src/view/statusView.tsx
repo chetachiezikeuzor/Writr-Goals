@@ -1,20 +1,11 @@
 import type WritrGoalsPlugin from "../plugin/main";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { PluginContext } from "./context";
 import { debounce } from "src/utils/debounce";
 import { WritrGoalsSettings } from "../settings/settingsData";
-import { CreateBoard } from "./createBoard";
 import { StatusBoard } from "./statusBoard";
-import NewBoard from "./newBoard";
 
-import {
-	App,
-	Notice,
-	ItemView,
-	WorkspaceLeaf,
-	ButtonComponent,
-} from "obsidian";
+import { App, ItemView, WorkspaceLeaf } from "obsidian";
 
 export const WritrGoalsViewType = "writr-goals-view-container";
 
@@ -72,7 +63,7 @@ export class WritrGoalsView extends ItemView {
 
 	redrawDebounced = debounce(function () {
 		this.redraw();
-	}, 100);
+	}, 1);
 
 	async redraw() {
 		this.reactComponent = React.createElement(StatusBoard);
