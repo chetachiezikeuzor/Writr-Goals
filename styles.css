@@ -1,4 +1,243 @@
-/* Sets all the text color to red! */
-body {
-    color: red;
+/*settings*/
+
+.wgDonationSection {
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	color: var(--text-normal);
+}
+
+text.value {
+	font-weight: 600;
+}
+
+.count-div.pattern-2 hr,
+.count-div.pattern-2 .HyperMD-hr-bg {
+	border-top-width: 2px !important;
+}
+
+.count-div.pattern-2 hr:after {
+	background-color: transparent !important;
+}
+
+.center-headers div:is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) * {
+	text-align: center;
+}
+
+div:is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6)
+	*:is(img.isc-icon.isc-box) {
+	height: 24px;
+	width: 24px;
+	transform: rotate(80deg);
+}
+
+img.isc-icon.isc-box {
+	filter: invert(58%) sepia(18%) saturate(569%) hue-rotate(157deg)
+		brightness(92%) contrast(92%) !important;
+}
+
+.theme-dark img.isc-icon.isc-box {
+	filter: invert(90%) sepia(2%) saturate(2828%) hue-rotate(185deg)
+		brightness(74%) contrast(79%) !important;
+}
+
+.progress-wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0.86em;
+}
+
+.count-div.pattern-2 {
+	margin-top: -24px;
+	height: fit-content;
+	width: 100%;
+}
+
+.ui-clock.pattern-2,
+.count-div.pattern-2 {
+	background-color: var(--background-secondary);
+	border: 2px solid var(--background-zero);
+	border-radius: 0.46em;
+}
+
+.progress-content-div {
+	width: 100%;
+	height: fit-content;
+	padding: 0.98em 0.86em;
+	margin: 10px auto;
+	border-radius: 6px;
+	background: var(--background-zero);
+	border: 1px solid var(--background-tertiary);
+}
+
+.theme-dark .progress-content-div {
+	background: var(--background-primary);
+}
+
+.progress-content-item.center-text,
+.progress-content-div.center-text {
+	text-align: center;
+}
+
+.progress-list-item {
+	display: list-item;
+	list-style: none;
+}
+
+h5.file-title {
+	font-size: 18px;
+	margin: 4px auto;
+	margin-top: 8px;
+	font-weight: 500;
+	text-decoration-color: var(--interactive-accent-hover);
+	text-decoration-line: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-style: double;
+	text-transform: capitalize;
+}
+
+.progress-list-item.file-description {
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-height: 80px;
+	margin-top: 8px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	color: var(--text-muted);
+	font-size: 16px;
+	line-height: 1.32em;
+}
+
+.progress-list-item.small-width {
+	width: 180px;
+	margin: 0 auto;
+	line-height: 1.26em;
+	margin-bottom: 8px;
+}
+
+.progress-stat {
+	display: flex;
+	grid-gap: 5px;
+	align-content: center;
+	align-items: center;
+}
+
+/*===== The CSS =====*/
+
+.progress {
+	max-width: 320px;
+	height: auto;
+}
+
+.progress .track,
+.progress .fill {
+	fill: var(--background-secondary);
+	stroke-width: 4.76;
+	transform: rotate(90deg) translate(0px, -80px);
+}
+
+.theme-dark .progress .track,
+.theme-dark.progress .fill {
+	fill: var(--background-zero);
+}
+
+.progress .track {
+	stroke: var(--background-zero);
+}
+
+.progress .fill {
+	stroke: rgb(255, 255, 255);
+	stroke-dasharray: 219.99078369140625;
+	stroke-dashoffset: -219.99078369140625;
+	transition: stroke-dashoffset 1s;
+}
+
+.progress.accent .fill {
+	stroke: var(--interactive-accent);
+}
+
+.progress .value,
+.progress .text {
+	fill: var(--interactive-accent);
+	text-anchor: middle;
+}
+
+.progress .text {
+	font-size: 12px;
+}
+
+.progress-item-title {
+	font-weight: 600;
+}
+
+.progress-item-title:before {
+	content: "✽ ";
+	font-weight: 900;
+	color: var(--interactive-accent);
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+/*progress bars*/
+
+progress {
+	background: none;
+	height: 0.64em;
+	width: 100%;
+}
+
+progress[value^="0"]::-webkit-progress-value {
+	background: var(--red-highlighter);
+}
+progress[value^="1"]::-webkit-progress-value {
+	background: #ff558280;
+}
+progress[value^="2"]::-webkit-progress-value {
+	background: #ff5582cc;
+}
+progress[value^="3"]::-webkit-progress-value {
+	background: #ffb86cca;
+}
+progress[value^="4"]::-webkit-progress-value {
+	background: #ffb86ccc;
+}
+progress[value^="5"]::-webkit-progress-value {
+	background: #ffe84cac;
+}
+progress[value^="6"]::-webkit-progress-value {
+	background: #ffe84ccc;
+}
+progress[value^="7"]::-webkit-progress-value {
+	background: #95f695cc;
+}
+progress[value^="8"]::-webkit-progress-value {
+	background: #64e048ac;
+}
+progress[value^="9"]::-webkit-progress-value {
+	background: #64e048cc;
+}
+progress[value^="100"]::-webkit-progress-value {
+	background: var(--interactive-accent-hover);
+}
+
+progress::-webkit-progress-value {
+	border-radius: 20px;
+	transition: 5s width;
+	background: var(--interactive-accent-hover);
+}
+
+progress::-webkit-progress-bar {
+	border-radius: 16px;
+	background: var(--background-primary-alt);
 }
