@@ -1,6 +1,6 @@
 # Writr Goals
 
-![](https://user-images.githubusercontent.com/79069364/142973672-e1965ca6-d328-4d5d-87d5-bdc92b39b2c0.mp4)
+https://user-images.githubusercontent.com/79069364/142973672-e1965ca6-d328-4d5d-87d5-bdc92b39b2c0.mp4
 
 ### Getting Started
 
